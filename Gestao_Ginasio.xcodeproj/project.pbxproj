@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E240688B2A40D49800CEF714 /* Gestao_GinasioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E240688A2A40D49800CEF714 /* Gestao_GinasioApp.swift */; };
+		E240688D2A40D49800CEF714 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E240688C2A40D49800CEF714 /* ContentView.swift */; };
+		E240688F2A40D49800CEF714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E240688E2A40D49800CEF714 /* Assets.xcassets */; };
+		E24068922A40D49800CEF714 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E24068912A40D49800CEF714 /* Preview Assets.xcassets */; };
+		E240689D2A40D49900CEF714 /* Gestao_GinasioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E240689C2A40D49900CEF714 /* Gestao_GinasioTests.swift */; };
+		E24068A72A40D49900CEF714 /* Gestao_GinasioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24068A62A40D49900CEF714 /* Gestao_GinasioUITests.swift */; };
+		E24068A92A40D49900CEF714 /* Gestao_GinasioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24068A82A40D49900CEF714 /* Gestao_GinasioUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E24068992A40D49900CEF714 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E240687F2A40D49800CEF714 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E24068862A40D49800CEF714;
+			remoteInfo = Gestao_Ginasio;
+		};
+		E24068A32A40D49900CEF714 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E240687F2A40D49800CEF714 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E24068862A40D49800CEF714;
+			remoteInfo = Gestao_Ginasio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E24068872A40D49800CEF714 /* Gestao_Ginasio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gestao_Ginasio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E240688A2A40D49800CEF714 /* Gestao_GinasioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestao_GinasioApp.swift; sourceTree = "<group>"; };
+		E240688C2A40D49800CEF714 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E240688E2A40D49800CEF714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E24068912A40D49800CEF714 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E24068932A40D49800CEF714 /* Gestao_Ginasio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gestao_Ginasio.entitlements; sourceTree = "<group>"; };
+		E24068982A40D49900CEF714 /* Gestao_GinasioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gestao_GinasioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E240689C2A40D49900CEF714 /* Gestao_GinasioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestao_GinasioTests.swift; sourceTree = "<group>"; };
+		E24068A22A40D49900CEF714 /* Gestao_GinasioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gestao_GinasioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E24068A62A40D49900CEF714 /* Gestao_GinasioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestao_GinasioUITests.swift; sourceTree = "<group>"; };
+		E24068A82A40D49900CEF714 /* Gestao_GinasioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestao_GinasioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E24068842A40D49800CEF714 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E24068952A40D49900CEF714 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E240689F2A40D49900CEF714 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E240687E2A40D49800CEF714 = {
+			isa = PBXGroup;
+			children = (
+				E24068892A40D49800CEF714 /* Gestao_Ginasio */,
+				E240689B2A40D49900CEF714 /* Gestao_GinasioTests */,
+				E24068A52A40D49900CEF714 /* Gestao_GinasioUITests */,
+				E24068882A40D49800CEF714 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E24068882A40D49800CEF714 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E24068872A40D49800CEF714 /* Gestao_Ginasio.app */,
+				E24068982A40D49900CEF714 /* Gestao_GinasioTests.xctest */,
+				E24068A22A40D49900CEF714 /* Gestao_GinasioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E24068892A40D49800CEF714 /* Gestao_Ginasio */ = {
+			isa = PBXGroup;
+			children = (
+				E240688A2A40D49800CEF714 /* Gestao_GinasioApp.swift */,
+				E240688C2A40D49800CEF714 /* ContentView.swift */,
+				E240688E2A40D49800CEF714 /* Assets.xcassets */,
+				E24068932A40D49800CEF714 /* Gestao_Ginasio.entitlements */,
+				E24068902A40D49800CEF714 /* Preview Content */,
+			);
+			path = Gestao_Ginasio;
+			sourceTree = "<group>";
+		};
+		E24068902A40D49800CEF714 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E24068912A40D49800CEF714 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E240689B2A40D49900CEF714 /* Gestao_GinasioTests */ = {
+			isa = PBXGroup;
+			children = (
+				E240689C2A40D49900CEF714 /* Gestao_GinasioTests.swift */,
+			);
+			path = Gestao_GinasioTests;
+			sourceTree = "<group>";
+		};
+		E24068A52A40D49900CEF714 /* Gestao_GinasioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E24068A62A40D49900CEF714 /* Gestao_GinasioUITests.swift */,
+				E24068A82A40D49900CEF714 /* Gestao_GinasioUITestsLaunchTests.swift */,
+			);
+			path = Gestao_GinasioUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E24068862A40D49800CEF714 /* Gestao_Ginasio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E24068AC2A40D49900CEF714 /* Build configuration list for PBXNativeTarget "Gestao_Ginasio" */;
+			buildPhases = (
+				E24068832A40D49800CEF714 /* Sources */,
+				E24068842A40D49800CEF714 /* Frameworks */,
+				E24068852A40D49800CEF714 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gestao_Ginasio;
+			productName = Gestao_Ginasio;
+			productReference = E24068872A40D49800CEF714 /* Gestao_Ginasio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E24068972A40D49900CEF714 /* Gestao_GinasioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E24068AF2A40D49900CEF714 /* Build configuration list for PBXNativeTarget "Gestao_GinasioTests" */;
+			buildPhases = (
+				E24068942A40D49900CEF714 /* Sources */,
+				E24068952A40D49900CEF714 /* Frameworks */,
+				E24068962A40D49900CEF714 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E240689A2A40D49900CEF714 /* PBXTargetDependency */,
+			);
+			name = Gestao_GinasioTests;
+			productName = Gestao_GinasioTests;
+			productReference = E24068982A40D49900CEF714 /* Gestao_GinasioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E24068A12A40D49900CEF714 /* Gestao_GinasioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E24068B22A40D49900CEF714 /* Build configuration list for PBXNativeTarget "Gestao_GinasioUITests" */;
+			buildPhases = (
+				E240689E2A40D49900CEF714 /* Sources */,
+				E240689F2A40D49900CEF714 /* Frameworks */,
+				E24068A02A40D49900CEF714 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E24068A42A40D49900CEF714 /* PBXTargetDependency */,
+			);
+			name = Gestao_GinasioUITests;
+			productName = Gestao_GinasioUITests;
+			productReference = E24068A22A40D49900CEF714 /* Gestao_GinasioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E240687F2A40D49800CEF714 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					E24068862A40D49800CEF714 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					E24068972A40D49900CEF714 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = E24068862A40D49800CEF714;
+					};
+					E24068A12A40D49900CEF714 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = E24068862A40D49800CEF714;
+					};
+				};
+			};
+			buildConfigurationList = E24068822A40D49800CEF714 /* Build configuration list for PBXProject "Gestao_Ginasio" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E240687E2A40D49800CEF714;
+			productRefGroup = E24068882A40D49800CEF714 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E24068862A40D49800CEF714 /* Gestao_Ginasio */,
+				E24068972A40D49900CEF714 /* Gestao_GinasioTests */,
+				E24068A12A40D49900CEF714 /* Gestao_GinasioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E24068852A40D49800CEF714 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E24068922A40D49800CEF714 /* Preview Assets.xcassets in Resources */,
+				E240688F2A40D49800CEF714 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E24068962A40D49900CEF714 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E24068A02A40D49900CEF714 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E24068832A40D49800CEF714 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E240688D2A40D49800CEF714 /* ContentView.swift in Sources */,
+				E240688B2A40D49800CEF714 /* Gestao_GinasioApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E24068942A40D49900CEF714 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E240689D2A40D49900CEF714 /* Gestao_GinasioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E240689E2A40D49900CEF714 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E24068A92A40D49900CEF714 /* Gestao_GinasioUITestsLaunchTests.swift in Sources */,
+				E24068A72A40D49900CEF714 /* Gestao_GinasioUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E240689A2A40D49900CEF714 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E24068862A40D49800CEF714 /* Gestao_Ginasio */;
+			targetProxy = E24068992A40D49900CEF714 /* PBXContainerItemProxy */;
+		};
+		E24068A42A40D49900CEF714 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E24068862A40D49800CEF714 /* Gestao_Ginasio */;
+			targetProxy = E24068A32A40D49900CEF714 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E24068AA2A40D49900CEF714 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E24068AB2A40D49900CEF714 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E24068AD2A40D49900CEF714 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Gestao_Ginasio/Gestao_Ginasio.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Gestao_Ginasio/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PDM.Gestao-Ginasio";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E24068AE2A40D49900CEF714 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Gestao_Ginasio/Gestao_Ginasio.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Gestao_Ginasio/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PDM.Gestao-Ginasio";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E24068B02A40D49900CEF714 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PDM.Gestao-GinasioTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gestao_Ginasio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Gestao_Ginasio";
+			};
+			name = Debug;
+		};
+		E24068B12A40D49900CEF714 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PDM.Gestao-GinasioTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gestao_Ginasio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Gestao_Ginasio";
+			};
+			name = Release;
+		};
+		E24068B32A40D49900CEF714 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PDM.Gestao-GinasioUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Gestao_Ginasio;
+			};
+			name = Debug;
+		};
+		E24068B42A40D49900CEF714 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PDM.Gestao-GinasioUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Gestao_Ginasio;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E24068822A40D49800CEF714 /* Build configuration list for PBXProject "Gestao_Ginasio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E24068AA2A40D49900CEF714 /* Debug */,
+				E24068AB2A40D49900CEF714 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E24068AC2A40D49900CEF714 /* Build configuration list for PBXNativeTarget "Gestao_Ginasio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E24068AD2A40D49900CEF714 /* Debug */,
+				E24068AE2A40D49900CEF714 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E24068AF2A40D49900CEF714 /* Build configuration list for PBXNativeTarget "Gestao_GinasioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E24068B02A40D49900CEF714 /* Debug */,
+				E24068B12A40D49900CEF714 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E24068B22A40D49900CEF714 /* Build configuration list for PBXNativeTarget "Gestao_GinasioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E24068B32A40D49900CEF714 /* Debug */,
+				E24068B42A40D49900CEF714 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E240687F2A40D49800CEF714 /* Project object */;
+}
