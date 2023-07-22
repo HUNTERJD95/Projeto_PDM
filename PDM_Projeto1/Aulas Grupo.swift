@@ -1,12 +1,12 @@
 import SwiftUI
 
-struct Aulas_Solo: View {
+struct Aulas_Grupo: View {
     var body: some View {
         VStack {
             Spacer()
             
             NavigationLink(destination: Horarios_e_Marcacao_Aulas()) {
-                Text("Yoga")
+                Text("Pilates")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
@@ -14,7 +14,7 @@ struct Aulas_Solo: View {
             .buttonStyle(PrimaryButtonStyle())
             
             NavigationLink(destination: Horarios_e_Marcacao_Aulas()) {
-                Text("Musculação")
+                Text("Zumba")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
@@ -22,7 +22,7 @@ struct Aulas_Solo: View {
             .buttonStyle(PrimaryButtonStyle())
             
             NavigationLink(destination: Horarios_e_Marcacao_Aulas()) {
-                Text("Natação")
+                Text("Body Pump")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
@@ -31,11 +31,11 @@ struct Aulas_Solo: View {
             
             Spacer()
         }
-        .navigationBarTitle("Aulas Individuais")
+        .navigationBarTitle("Aulas de Grupo")
     }
 }
 
-struct PrimaryButtonStyle: ButtonStyle {
+struct PrimaryButtonStyleGrupo: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(.white)
@@ -47,10 +47,10 @@ struct PrimaryButtonStyle: ButtonStyle {
     }
 }
 
-struct Aulas_Solo_Previews: PreviewProvider {
+struct Aulas_Grupo_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            Aulas_Solo()
+            Aulas_Grupo()
         }
     }
 }
