@@ -1,13 +1,10 @@
 import SwiftUI
-import SQLite3
-import Foundation
 
 struct ModificarUser: View {
     @EnvironmentObject private var userControllerHolder: UserControllerHolder
     @Environment(\.presentationMode) var presentationMode
     
-    var currentUser: User { UserControllerHolder().userController.getUserFromLocalStorage()
-    }
+    var currentUser: User { userControllerHolder.userController.getUserFromLocalStorage() }
     
     @State private var newUsername = ""
     @State private var newPassword = ""
@@ -16,7 +13,7 @@ struct ModificarUser: View {
     @State private var isUsernameTakenError = false
     @State private var isUpdateSuccess = false
     @State private var isDeleteSuccess = false
-
+    @State private var shouldShowLoginView = false
 
     var body: some View {
         VStack {
@@ -31,7 +28,7 @@ struct ModificarUser: View {
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
                 .onChange(of: newUsername, perform: { value in
-                    isUsernameTakenError = false // Reset the error flag when the user starts typing a new username
+                    isUsernameTakenError = false
                 })
 
             SecureField("Nova Password", text: $newPassword)
@@ -55,6 +52,7 @@ struct ModificarUser: View {
             .background(isInvalidInput ? Color.gray : Color.green)
             .cornerRadius(10)
             .disabled(isInvalidInput)
+            .padding(40)
 
             Button("Apagar Conta") {
                 deleteUser()
@@ -63,19 +61,13 @@ struct ModificarUser: View {
             .frame(width: 300, height: 50)
             .background(Color.red)
             .cornerRadius(10)
-
+            .padding(50)
+        
             Spacer()
 
-            // Button("Voltar") {
-            //     presentationMode.wrappedValue.dismiss()
-            // }
-            // .foregroundColor(.white)
-            // .frame(width: 300, height: 50)
-            // .background(Color.blue)
-            // .cornerRadius(10)
-            // .padding(.bottom, 20)
         }
         .padding()
+        
         .alert(isPresented: $isPasswordsMatchError) {
             Alert(
                 title: Text("Erro"),
@@ -101,9 +93,13 @@ struct ModificarUser: View {
             Alert(
                 title: Text("Sucesso"),
                 message: Text("Conta apagada com sucesso!"),
-                dismissButton: .default(Text("OK"))
-            )
+                dismissButton: .default(Text("OK")) {
+                    shouldShowLoginView = true // Set to true to show the Login view
+                })
         }
+        .fullScreenCover(isPresented: $shouldShowLoginView, content: {
+            Login_e_Registo()
+        })
         .onAppear {
             newUsername = currentUser.username
         }
@@ -133,29 +129,24 @@ struct ModificarUser: View {
             isUsernameTakenError = true
         }
     }
-
+    
     func deleteUser() {
         let userController = userControllerHolder.userController
 
         // Delete the user
         if userController.deleteUser(id: currentUser.id) {
             isDeleteSuccess = true
-            print("Deleted user with id \(currentUser)")
+            print("Deleted user with id \(currentUser.id)")
         } else {
-            // Handle the case when the userController fails to delete the user
+            print("Failed to delete user with id \(currentUser.id)")
         }
     }
 }
 
 struct ModificarUser_Previews: PreviewProvider {
     static var previews: some View {
-        // Create a dummy UserControllerHolder for the preview
-        //let userControllerHolder = UserControllerHolder()
-        // Set any initial data you need for the preview
-        // For example, you can set a dummy userController with some initial data
-
-
+        let userControllerHolder = UserControllerHolder()
         return ModificarUser()
-            // .environmentObject(userControllerHolder)
+            .environmentObject(userControllerHolder)
     }
 }

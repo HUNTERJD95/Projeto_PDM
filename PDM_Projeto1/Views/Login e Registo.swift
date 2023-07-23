@@ -1,8 +1,3 @@
-//  Login e Registo.swift
-//  PDM_Projeto1
-//
-//  Created by user239318 on 6/19/23.
-//
 import SwiftUI
 
 struct Login_e_Registo: View {
@@ -22,11 +17,10 @@ struct LoginView: View {
     @State private var wrongPassword = 0
     @State private var showingLoginScreen = false
     @State private var showingRegistrationScreen = false
-    
     @EnvironmentObject private var userControllerHolder: UserControllerHolder
     @Environment(\.managedObjectContext) private var viewContext
     @State private var showAlert = false
-    @State private var isLoginSuccess = false // New state variable for login success
+    @State private var isLoginSuccess = false
     
     var body: some View {
         NavigationView {
@@ -95,7 +89,6 @@ struct LoginView: View {
     }
     
     func autenticarUser(username: String, password: String) {
-        // Validate the user login here
         let userController = userControllerHolder.userController
         
         if let user = userController.getUser(username: username, password: password) {
@@ -104,7 +97,6 @@ struct LoginView: View {
             isLoginSuccess = true // Set to true to navigate to ContentView
             userController.saveUserToLocalStorage(user: user)
         } else {
-            // Login failed
             print("Invalid credentials. Please try again.")
             wrongUsername = 1 // Indicate incorrect credentials for UI feedback
             wrongPassword = 1
@@ -112,12 +104,10 @@ struct LoginView: View {
     }
 }
 
-
-
 struct RegistrationView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject private var userControllerHolder: UserControllerHolder // Access the UserControllerHolder
-    
     @State private var username = ""
     @State private var password = ""
     @State private var confirmPassword = ""
@@ -192,6 +182,12 @@ struct RegistrationView: View {
     }
 
     func registerUser() {
+        
+        if password.isEmpty || confirmPassword.isEmpty {
+                isPasswordsMatchError = true
+                return
+            }
+        
         if password != confirmPassword {
             isPasswordsMatchError = true
             return
@@ -212,12 +208,8 @@ struct Login_e_Registo_Previews: PreviewProvider {
     @Environment(\.managedObjectContext) var managedObjectContext
     static var previews: some View {
 
-        // let dataController = DataController() // Cria uma instância de DataController
-        //let context = dataController.container.viewContext // Obtém o contexto do container
         let userControllerHolder = UserControllerHolder()
         return Login_e_Registo()
             .environmentObject(userControllerHolder)
-            //.environment(\.managedObjectContext, context)
-            //.environmentObject(dataController) // Adiciona o dataController como um environment object
     }
 }

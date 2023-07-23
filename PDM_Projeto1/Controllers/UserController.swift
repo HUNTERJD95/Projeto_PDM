@@ -1,16 +1,12 @@
-//
-//  UserController.swift
-//  PDM_Projeto1
-//
-//  Created by Emu Wu on 20/07/2023.
-//
 import SQLite3
 import Foundation
 
 class UserControllerHolder: ObservableObject {
     @Published var userController = UserController()
 
-    // Add any other shared data or methods here, if needed
+    init() {
+           userController = UserController()
+       }
 }
 
 struct User {
@@ -193,10 +189,11 @@ class UserController {
         print("saved user to storage")
     }
     
+    // Dictionary to save logged in user to local storage
     func getUserFromLocalStorage() -> User {
         let defaults = UserDefaults.standard
         let userDict = defaults.dictionary(forKey: "loggedInUser") ?? [:]
-        print("retrieving user from storage storage")
+        print("retrieving user from storage")
         return User(id: userDict["id"] as! Int64, username: userDict["username"] as! String, password: "")
     }
 }

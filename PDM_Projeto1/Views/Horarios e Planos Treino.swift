@@ -1,10 +1,3 @@
-//
-//  Horarios e Planos Treino.swift
-//  PDM_Projeto1
-//
-//  Created by user239318 on 6/19/23.
-//
-
 import SwiftUI
 
 struct ScheduleItem: Identifiable {
@@ -70,7 +63,7 @@ struct ScheduleView: View {
                     
                     Button("Marcar Aula") {
                         if let selectedTime = selectedTime {
-                            // Here you can send the selectedTime to the database
+                            // TODO send to DB if enough time :/
                             
                             print("Aula marcada para: \(selectedTime)")
                         } else {

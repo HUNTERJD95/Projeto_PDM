@@ -8,7 +8,8 @@ import CoreData
 import SwiftUI
 
 @main
-struct PDM_Projeto1App: App {
+struct Main: App {
+    @StateObject private var userControllerHolder = UserControllerHolder()
     init() {
         DatabaseController.instance.createTablesIfNotExists()
         
@@ -21,7 +22,8 @@ struct PDM_Projeto1App: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Login_e_Registo()
+                .environmentObject(userControllerHolder)
         }
     }
 }

@@ -1,10 +1,3 @@
-//
-//  datacontroller.swift
-//  PDM_Projeto1
-//
-//  Created by Emu Wu on 18/07/2023.
-//
-
 import SQLite
 import Foundation
 
@@ -35,7 +28,7 @@ class DatabaseController {
                     t.column(password)
             })
             
-            // TODO add more tables
+            // TODO add more tables (Marcacao aulas)
         }
         catch {
             print("Cannot connect table: \(error)")
