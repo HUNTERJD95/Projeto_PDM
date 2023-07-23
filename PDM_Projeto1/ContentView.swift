@@ -2,8 +2,7 @@ import SwiftUI
 import SQLite3
 
 struct ContentView: View {
-   
-
+    @EnvironmentObject private var userControllerHolder: UserControllerHolder
     @State private var isAuthenticated = true // For testing purposes, set to true
 
     var body: some View {
@@ -53,7 +52,6 @@ struct ContentView: View {
 
                     Spacer()
 
-                   
                     NavigationLink(destination: Login_e_Registo()) {
                         Text("Logout")
                             .font(.headline)
@@ -62,14 +60,15 @@ struct ContentView: View {
                             .background(Color.red)
                             .cornerRadius(10)
                     }
-
-                    Button("Modificar/Apagar Conta") {
-                        // Implement logic to modify or delete account here
+                    
+                    NavigationLink(destination: ModificarUser().environmentObject(userControllerHolder)) {
+                        Text("Modificar/Apagar Conta")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(width: 250, height: 60)
+                            .background(Color.orange)
+                            .cornerRadius(10)
                     }
-                    .foregroundColor(.white)
-                    .frame(width: 250, height: 60)
-                    .background(Color.orange)
-                    .cornerRadius(10)
 
                     Spacer()
                 }
@@ -83,6 +82,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        let userControllerHolder = UserControllerHolder()
         ContentView()
+            .environmentObject(userControllerHolder)
+
     }
 }

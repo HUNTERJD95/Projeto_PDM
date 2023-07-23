@@ -102,6 +102,7 @@ struct LoginView: View {
             // Login successful
             print("Login successful for user: \(user.username)")
             isLoginSuccess = true // Set to true to navigate to ContentView
+            userController.saveUserToLocalStorage(user: user)
         } else {
             // Login failed
             print("Invalid credentials. Please try again.")

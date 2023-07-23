@@ -1,9 +1,14 @@
 import SwiftUI
 import SQLite3
+import Foundation
 
 struct ModificarUser: View {
     @EnvironmentObject private var userControllerHolder: UserControllerHolder
-    @State private var currentUsername = ""
+    @Environment(\.presentationMode) var presentationMode
+    
+    var currentUser: User { UserControllerHolder().userController.getUserFromLocalStorage()
+    }
+    
     @State private var newUsername = ""
     @State private var newPassword = ""
     @State private var confirmPassword = ""
@@ -11,44 +16,45 @@ struct ModificarUser: View {
     @State private var isUsernameTakenError = false
     @State private var isUpdateSuccess = false
     @State private var isDeleteSuccess = false
-    
+
+
     var body: some View {
         VStack {
-            Text("Modificar Dados")
+            Text("Modificar")
                 .font(.largeTitle)
                 .bold()
                 .padding()
-            
-            // Current username display
-            Text("Username Atual: \(currentUsername)")
-                .foregroundColor(.black)
-                .padding()
-            
+
             TextField("Novo Username", text: $newUsername)
                 .padding()
                 .frame(width: 300, height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-            
+                .onChange(of: newUsername, perform: { value in
+                    isUsernameTakenError = false // Reset the error flag when the user starts typing a new username
+                })
+
             SecureField("Nova Password", text: $newPassword)
                 .padding()
                 .frame(width: 300, height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-            
+
             SecureField("Confirmar Nova Password", text: $confirmPassword)
                 .padding()
                 .frame(width: 300, height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-            
+
             Button("Guardar Alterações") {
                 modifyUser()
+                presentationMode.wrappedValue.dismiss()
             }
             .foregroundColor(.white)
             .frame(width: 300, height: 50)
-            .background(Color.green)
+            .background(isInvalidInput ? Color.gray : Color.green)
             .cornerRadius(10)
+            .disabled(isInvalidInput)
 
             Button("Apagar Conta") {
                 deleteUser()
@@ -57,6 +63,17 @@ struct ModificarUser: View {
             .frame(width: 300, height: 50)
             .background(Color.red)
             .cornerRadius(10)
+
+            Spacer()
+
+            // Button("Voltar") {
+            //     presentationMode.wrappedValue.dismiss()
+            // }
+            // .foregroundColor(.white)
+            // .frame(width: 300, height: 50)
+            // .background(Color.blue)
+            // .cornerRadius(10)
+            // .padding(.bottom, 20)
         }
         .padding()
         .alert(isPresented: $isPasswordsMatchError) {
@@ -88,25 +105,30 @@ struct ModificarUser: View {
             )
         }
         .onAppear {
-            // Set the currentUsername state variable with the current user's username
-            if let currentUser = userControllerHolder.userController.currentUser {
-                currentUsername = currentUser.username
-            }
+            newUsername = currentUser.username
         }
+    }
+
+    private var isInvalidInput: Bool {
+        newPassword != confirmPassword || newUsername.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
     func modifyUser() {
         if newPassword != confirmPassword {
             isPasswordsMatchError = true
+            print("Wrong password")
             return
         }
+        
+        print("Updating user")
 
-        let userController = userControllerHolder.userController
+        let userController: UserController = userControllerHolder.userController
 
-        if userController.modifyUser(username: newUsername, password: newPassword) {
+        // Modify the user with the new data
+        if userController.updateUser(id: currentUser.id, newUsername: newUsername, newPassword: newPassword) {
             isUpdateSuccess = true
-            // If the username was updated successfully, update the currentUsername state variable
-            currentUsername = newUsername
+            userController.saveUserToLocalStorage(user: User(id: currentUser.id, username: newUsername, password: ""))
+            print("User updated")
         } else {
             isUsernameTakenError = true
         }
@@ -115,22 +137,25 @@ struct ModificarUser: View {
     func deleteUser() {
         let userController = userControllerHolder.userController
 
-        if userController.deleteUser() {
+        // Delete the user
+        if userController.deleteUser(id: currentUser.id) {
             isDeleteSuccess = true
+            print("Deleted user with id \(currentUser)")
+        } else {
+            // Handle the case when the userController fails to delete the user
         }
     }
 }
 
 struct ModificarUser_Previews: PreviewProvider {
-    @Environment(\.managedObjectContext) var managedObjectContext
     static var previews: some View {
         // Create a dummy UserControllerHolder for the preview
-        let userControllerHolder = UserControllerHolder()
+        //let userControllerHolder = UserControllerHolder()
         // Set any initial data you need for the preview
         // For example, you can set a dummy userController with some initial data
-        userControllerHolder.userController.createUser(username: "dummyUser", password: "password123")
+
 
         return ModificarUser()
-            .environmentObject(userControllerHolder)
+            // .environmentObject(userControllerHolder)
     }
 }

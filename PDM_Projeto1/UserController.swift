@@ -62,6 +62,26 @@ class UserController {
         }
     }
     
+    func findUserByUsername(_ username: String) -> User? {
+           let query = "SELECT * FROM users WHERE username = ?;"
+           var statement: OpaquePointer?
+
+           if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+               sqlite3_bind_text(statement, 1, (username as NSString).utf8String, -1, nil)
+
+               if sqlite3_step(statement) == SQLITE_ROW {
+                   let id = sqlite3_column_int64(statement, 0)
+                   let resultUsername = String(cString: sqlite3_column_text(statement, 1))
+                   let resultPassword = String(cString: sqlite3_column_text(statement, 2))
+
+                   sqlite3_finalize(statement)
+                   return User(id: id, username: resultUsername, password: resultPassword)
+               }
+           }
+
+           sqlite3_finalize(statement)
+           return nil
+       }
     
     func createUser(username: String, password: String) -> Bool {
            let createTableQuery = """
@@ -118,13 +138,23 @@ class UserController {
        }
     
     func updateUser(id: Int64, newUsername: String, newPassword: String) -> Bool {
-           let updateQuery = "UPDATE users SET username = ?, password = ? WHERE id = ?;"
+            let updateQuery: String
+            if (newPassword != "") {
+                updateQuery = "UPDATE users SET username = ?, password = ? WHERE id = ?;"
+            } else {
+                updateQuery = "UPDATE users SET username = ? WHERE id = ?;"
+            }
 
            var statement: OpaquePointer?
            if sqlite3_prepare_v2(db, updateQuery, -1, &statement, nil) == SQLITE_OK {
                sqlite3_bind_text(statement, 1, (newUsername as NSString).utf8String, -1, nil)
-               sqlite3_bind_text(statement, 2, (newPassword as NSString).utf8String, -1, nil)
-               sqlite3_bind_int64(statement, 3, id)
+
+               if (newPassword != "") {
+                   sqlite3_bind_text(statement, 2, (newPassword as NSString).utf8String, -1, nil)
+                   sqlite3_bind_int64(statement, 3, id)
+               } else {
+                   sqlite3_bind_int64(statement, 2, id)
+               }
 
                if sqlite3_step(statement) == SQLITE_DONE {
                    sqlite3_finalize(statement)
@@ -152,4 +182,21 @@ class UserController {
            sqlite3_finalize(statement)
            return false
        }
+    
+    func saveUserToLocalStorage(user: User) -> Void {
+        let defaults = UserDefaults.standard
+        let userDict = [
+            "id": user.id,
+            "username": user.username
+        ] as [String: Any]
+        defaults.set(userDict, forKey: "loggedInUser")
+        print("saved user to storage")
+    }
+    
+    func getUserFromLocalStorage() -> User {
+        let defaults = UserDefaults.standard
+        let userDict = defaults.dictionary(forKey: "loggedInUser") ?? [:]
+        print("retrieving user from storage storage")
+        return User(id: userDict["id"] as! Int64, username: userDict["username"] as! String, password: "")
+    }
 }
